@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="pcl_ros" type="pointcloud_to_pcd" name="pc_to_pcd" args="_prefix:=/tmp/pcd/vel_">
+    <remap from="input" to="/edge_detector/output"/>
+  </node>
+</launch>

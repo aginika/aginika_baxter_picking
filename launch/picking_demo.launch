@@ -1,0 +1,15 @@
+<launch>
+  <!-- Please launch Eus node by your self -->
+  <!-- rosrun aginika_baxter_picking main.l -->
+
+  <!-- JSON Publisher -->
+  <node pkg="jsk_2014_picking_challenge" type="read_json.py" name="semi" args="--file $(find jsk_2014_picking_challenge)/data/example.json">
+  </node>
+
+  <include file="$(find jsk_2014_picking_challenge)/launch/upload_baxter.launch"/>
+  
+  <include file="$(find jsk_2014_picking_challenge)/launch/passthrough_image.launch">
+    <arg name="custom" value="true"/>
+  </include>
+
+</launch>
