@@ -65,4 +65,17 @@
     </rosparam>
   </node>
 
+  <node pkg="nodelet" type="nodelet" name="pass_through_z_edge"
+        args="standalone pcl/PassThrough">
+    <remap from="~input" to="added/output" />
+    <!-- suppose QVGA -->
+    <rosparam>
+      filter_field_name: z
+      filter_limit_min: 0
+      filter_limit_max: 1.5
+      keep_organized: true
+    </rosparam>
+  </node>
+
+
 </launch>
